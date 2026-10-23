@@ -295,6 +295,6 @@ async def list_tasks(request: Request):
     return a2a({"tasks": out, "nextPageToken": ""})
 
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 async def root():
     return {"status": "ok", "agentCard": "/.well-known/agent-card.json", "base": BASE_PATH + "/"}
